@@ -23,19 +23,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function render() {
   container.innerHTML = "";
+  const tileSize = container.offsetWidth / size;
+
   tiles.forEach((tile, i) => {
     const div = document.createElement("div");
     div.className = "tile";
+
     if (tile === null) {
       div.classList.add("empty");
     } else {
       const x = tile % size;
       const y = Math.floor(tile / size);
       div.style.backgroundImage = `url(${imageUrl})`;
-      div.style.backgroundSize = `${size * 100}% ${size * 100}%`;
-      div.style.backgroundPosition = `-${(x * 100)}% -${(y * 100)}%`;
+      div.style.backgroundSize = `${tileSize * size}px ${tileSize * size}px`;
+      div.style.backgroundPosition = `-${x * tileSize}px -${y * tileSize}px`;
       div.addEventListener("click", () => tryMove(i));
     }
+
     container.appendChild(div);
   });
 }
