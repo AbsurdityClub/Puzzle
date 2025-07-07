@@ -1,5 +1,5 @@
 const container = document.getElementById('puzzle-container');
-const imageUrl = 'const imageUrl = 'https://cdn.shopify.com/s/files/1/0749/1351/3694/files/IMG_4750.jpg?v=1751923000'; // Replace with your image file name
+const imageUrl = 'const imageUrl = 'IMG_4750.jpg'; // Replace with your image file name
 const size = 3;
 let tiles = [];
 let emptyIndex = size * size - 1;
