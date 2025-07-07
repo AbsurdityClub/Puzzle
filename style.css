@@ -11,11 +11,13 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 #game-wrapper {
   max-width: 90vmin;
   width: 100%;
+  padding: 20px;
 }
 
 #puzzle-container {
@@ -24,12 +26,11 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2px;
-  position: relative;
   touch-action: none;
 }
 
 .tile {
-  background-size: cover;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   transition: transform 0.2s ease;
   touch-action: none;
