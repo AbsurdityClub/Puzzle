@@ -22,22 +22,23 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function render() {
-    container.innerHTML = "";
-    tiles.forEach((tile, i) => {
-      const div = document.createElement("div");
-      div.className = "tile";
-      if (tile === null) {
-        div.classList.add("empty");
-      } else {
-        const x = tile % size;
-        const y = Math.floor(tile / size);
-        div.style.backgroundImage = `url(${imageUrl})`;
-        div.style.backgroundPosition = `-${x * 100 / (size - 1)}% -${y * 100 / (size - 1)}%`;
-        div.addEventListener("click", () => tryMove(i));
-      }
-      container.appendChild(div);
-    });
-  }
+  container.innerHTML = "";
+  tiles.forEach((tile, i) => {
+    const div = document.createElement("div");
+    div.className = "tile";
+    if (tile === null) {
+      div.classList.add("empty");
+    } else {
+      const x = tile % size;
+      const y = Math.floor(tile / size);
+      div.style.backgroundImage = `url(${imageUrl})`;
+      div.style.backgroundSize = `${size * 100}% ${size * 100}%`;
+      div.style.backgroundPosition = `-${(x * 100)}% -${(y * 100)}%`;
+      div.addEventListener("click", () => tryMove(i));
+    }
+    container.appendChild(div);
+  });
+}
 
   function tryMove(i) {
     if (isAdjacent(i, emptyIndex)) {
