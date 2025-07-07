@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const container = document.getElementById("puzzle-container");
   const message = document.getElementById("message");
-  const imageUrl = "IMG_4750.jpeg";
+  const imageUrl = "IMG_4750.jpg";
   const size = 3;
   let tiles = [];
   let emptyIndex = size * size - 1;
