@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+#game-wrapper {
+  max-width: 90vmin;
+  width: 100%;
+}
+
+#puzzle-container {
+  width: 100%;
+  aspect-ratio: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  position: relative;
+  touch-action: none;
+}
+
+.tile {
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: transform 0.2s ease;
+  touch-action: none;
+}
+
+.empty {
+  background: none;
+}
+
+#message {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1rem;
+}
